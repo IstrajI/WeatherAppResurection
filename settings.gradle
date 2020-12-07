@@ -1,0 +1,5 @@
+include ':core'
+include ':weatherDetails'
+include ':cityList'
+include ':app'
+rootProject.name = "WeatherAppResurection"

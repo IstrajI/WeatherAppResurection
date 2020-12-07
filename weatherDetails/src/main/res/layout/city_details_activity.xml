@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/dark_gray"
+        app:layout_constraintBottom_toBottomOf="@+id/mainDescriptionSeparator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cityName"
+        style="@style/WeatherBase.Header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/leftGuideline"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Brest" />
+
+    <TextView
+        android:id="@+id/country"
+        style="@style/WeatherBase.TextRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintStart_toStartOf="@+id/leftGuideline"
+        app:layout_constraintTop_toBottomOf="@id/cityName"
+        tools:text="Brest" />
+
+    <TextView
+        android:id="@+id/temperature"
+        style="@style/WeatherBase.Header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/rightGuideline"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="23" />
+
+    <TextView
+        android:id="@+id/weatherDescription"
+        style="@style/WeatherBase.TextRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/rightGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/temperature"
+        tools:text="cold" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/mainDescriptionSeparator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="40dp"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="country, weatherDescription" />
+    <!-- aditional information -->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/leftGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rightGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/centerGuidline"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+    <!-- first column -->
+    <TextView
+        android:id="@+id/latitudeTitle"
+        android:layout_marginTop="8dp"
+        style="@style/WeatherBase.TextRegular"
+        android:layout_width="0dp"
+        android:text="@string/cityDetailsLatitudeTitle"
+        app:layout_constraintEnd_toStartOf="@id/latitudeDescription"
+        app:layout_constraintStart_toStartOf="@+id/leftGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/mainDescriptionSeparator" />
+
+    <TextView
+        android:id="@+id/latitudeDescription"
+        style="@style/WeatherBase.TextBold"
+        android:layout_marginEnd="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/centerGuidline"
+        app:layout_constraintTop_toBottomOf="@+id/mainDescriptionSeparator"
+        tools:text="45.00000" />
+
+    <TextView
+        android:id="@+id/longitudeTitle"
+        style="@style/WeatherBase.TextRegular"
+        android:layout_width="0dp"
+        android:text="@string/cityDetailsLongitudeTitle"
+        app:layout_constraintEnd_toStartOf="@id/longitudeDescription"
+        app:layout_constraintStart_toStartOf="@+id/leftGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/latitudeTitle" />
+
+    <TextView
+        android:id="@+id/longitudeDescription"
+        style="@style/WeatherBase.TextBold"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/centerGuidline"
+        app:layout_constraintTop_toBottomOf="@+id/latitudeDescription"
+        tools:text="45.00000" />
+
+    <TextView
+        android:id="@+id/pressureTitle"
+        style="@style/WeatherBase.TextRegular"
+        android:layout_width="0dp"
+        android:text="@string/cityDetailsPressureTitle"
+        app:layout_constraintEnd_toStartOf="@id/pressureDescription"
+        app:layout_constraintStart_toStartOf="@+id/leftGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/longitudeTitle" />
+
+    <TextView
+        android:id="@+id/pressureDescription"
+        style="@style/WeatherBase.TextBold"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/centerGuidline"
+        app:layout_constraintTop_toBottomOf="@+id/longitudeDescription"
+        tools:text="58" />
+
+    <!-- second column -->
+    <TextView
+        android:id="@+id/humidityTitle"
+        style="@style/WeatherBase.TextRegular"
+        android:layout_marginTop="8dp"
+        android:layout_width="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:text="@string/cityDetailsHumidityTitle"
+        app:layout_constraintEnd_toStartOf="@id/humidityDescription"
+        app:layout_constraintStart_toEndOf="@+id/centerGuidline"
+        app:layout_constraintTop_toBottomOf="@+id/mainDescriptionSeparator" />
+
+    <TextView
+        android:layout_marginTop="8dp"
+        android:id="@+id/humidityDescription"
+        style="@style/WeatherBase.TextBold"
+        app:layout_constraintEnd_toEndOf="@+id/rightGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/mainDescriptionSeparator"
+        tools:text="45.00000" />
+
+
+    <TextView
+        android:id="@+id/windSpeedTitle"
+        style="@style/WeatherBase.TextRegular"
+        android:layout_width="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:text="@string/cityDetailsWindSpeedTitle"
+        app:layout_constraintEnd_toStartOf="@id/humidityDescription"
+        app:layout_constraintStart_toEndOf="@+id/centerGuidline"
+        app:layout_constraintTop_toBottomOf="@+id/humidityTitle" />
+
+    <TextView
+        android:id="@+id/windSpeedDescription"
+        style="@style/WeatherBase.TextBold"
+        app:layout_constraintEnd_toEndOf="@+id/rightGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/humidityDescription"
+        tools:text="45.00000" />
+
+    <TextView
+        android:id="@+id/windDegreeTitle"
+        style="@style/WeatherBase.TextRegular"
+        android:layout_width="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:text="@string/cityDetailsWindDegreeTitle"
+        app:layout_constraintEnd_toStartOf="@id/windDegreeDescription"
+        app:layout_constraintStart_toEndOf="@+id/centerGuidline"
+        app:layout_constraintTop_toBottomOf="@+id/windSpeedTitle" />
+
+    <TextView
+        android:id="@+id/windDegreeDescription"
+        style="@style/WeatherBase.TextBold"
+        app:layout_constraintEnd_toEndOf="@+id/rightGuideline"
+        app:layout_constraintTop_toBottomOf="@id/windSpeedDescription"
+        tools:text="45.00000" />
+
+    <TextView
+        android:id="@+id/cloudTitle"
+        style="@style/WeatherBase.TextRegular"
+        android:layout_width="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:text="@string/cityDetailsCloudTitle"
+        app:layout_constraintEnd_toStartOf="@id/cloudDescription"
+        app:layout_constraintStart_toEndOf="@+id/centerGuidline"
+        app:layout_constraintTop_toBottomOf="@+id/windDegreeTitle" />
+
+    <TextView
+        android:id="@+id/cloudDescription"
+        style="@style/WeatherBase.TextBold"
+        app:layout_constraintEnd_toEndOf="@+id/rightGuideline"
+        app:layout_constraintTop_toBottomOf="@id/windDegreeDescription"
+        tools:text="45.00000" />
+</androidx.constraintlayout.widget.ConstraintLayout>

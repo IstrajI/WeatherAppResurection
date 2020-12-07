@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cityDetailsNameTitle">Latitude</string>
+    <string name="cityDetailsLatitudeTitle">Latitude</string>
+    <string name="cityDetailsLongitudeTitle">Longitude</string>
+    <string name="cityDetailsPressureTitle">Pressure</string>
+    <string name="cityDetailsHumidityTitle">Humidity</string>
+    <string name="cityDetailsWindSpeedTitle">Wind speed</string>
+    <string name="cityDetailsWindDegreeTitle">Wind degree</string>
+    <string name="cityDetailsCloudTitle">Cloud</string>
+</resources>
